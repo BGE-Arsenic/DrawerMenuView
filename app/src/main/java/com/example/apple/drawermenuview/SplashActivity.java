@@ -2,7 +2,6 @@ package com.example.apple.drawermenuview;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.provider.SyncStateContract;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,11 +34,11 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
         int i = new Random().nextInt(Constants.TRANSITION_URLS.length);
-        splash_iv_defult_pic.setImageDrawable(getResources().getDrawable(R.mipmap.img_transition_default));
+        splash_iv_defult_pic.setImageDrawable(getResources().getDrawable(R.drawable.img_transition_default));
         Glide.with(this)
                 .load(Constants.TRANSITION_URLS[i])
-                .placeholder(R.mipmap.img_transition_default)
-                .error(R.mipmap.img_transition_default)
+                .placeholder(R.drawable.img_transition_default)
+                .error(R.drawable.img_transition_default)
                 .into(splash_iv_pic);
 
         new Handler().postDelayed(new Runnable() {
